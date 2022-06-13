@@ -6,10 +6,7 @@
 
 import 'package:flutter/material.dart'
     hide RefreshIndicator, RefreshIndicatorState;
-import 'package:flutter/widgets.dart';
 import '../../pull_to_refresh.dart';
-import '../internals/indicator_wrap.dart';
-import '../smart_refresher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
@@ -88,7 +85,6 @@ class ClassicHeader extends RefreshIndicator {
 
   @override
   State createState() {
-    // TODO: implement createState
     return _ClassicHeaderState();
   }
 }
@@ -146,13 +142,11 @@ class _ClassicHeaderState extends RefreshIndicatorState<ClassicHeader> {
 
   @override
   bool needReverseAll() {
-    // TODO: implement needReverseAll
     return false;
   }
 
   @override
   Widget buildContent(BuildContext context, RefreshStatus? mode) {
-    // TODO: implement buildContent
     Widget textWidget = _buildText(mode);
     Widget iconWidget = _buildIcon(mode);
     List<Widget> children = <Widget>[iconWidget, textWidget];
@@ -243,8 +237,6 @@ class ClassicFooter extends LoadIndicator {
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-
     return _ClassicFooterState();
   }
 }
@@ -289,13 +281,11 @@ class _ClassicFooterState extends LoadIndicatorState<ClassicFooter> {
 
   @override
   Future endLoading() {
-    // TODO: implement endLoading
     return Future.delayed(widget.completeDuration);
   }
 
   @override
   Widget buildContent(BuildContext context, LoadStatus? mode) {
-    // TODO: implement buildChild
     Widget textWidget = _buildText(mode);
     Widget iconWidget = _buildIcon(mode);
     List<Widget> children = <Widget>[iconWidget, textWidget];
